@@ -1,5 +1,10 @@
-# react-study third project
+# 리액트 스터디 - 세 번째 프로젝트
+<h1>코딩알려주는 누나 리액트 스터디</h1>
+<br/>
 
-## shoppingmall website
+## 링크
+- [배포]()
 
-## casetify
+## 프로젝트 소개
+### 주제
+기존 강의와 다르게 휴대폰 케이스 쇼핑몰인 casetify를 만들 예정.
