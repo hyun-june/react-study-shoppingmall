@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faGlobe, faMagnifyingGlass, faCartShopping} from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
     const menuList = ['기종','시그니처 프린트','Co-Lab','커스텀','제품','최신 & 트렌딩']
@@ -10,7 +11,13 @@ const Navbar = () => {
 
     const searchItem = () =>{
         setToogleSearch(!toogleSearch)
-    } 
+    }
+
+    const navigate = useNavigate()
+    const goToLogin = () =>{
+        navigate("/login")
+    }
+    
   return (
     <div>
       <div className="header-section">
@@ -22,14 +29,14 @@ const Navbar = () => {
         <div className="logo-img">
             <img width={120} src="https://cdn.casetify.com/img/ui/casetify-logo.png" alt="" />
         </div>
-        <div>
+        <div className="menu-list-section">
             <ul className="menu-list">
                 {menuList.map((menu)=>(<li>{menu}</li>))}
             </ul>
         </div>
         <div className="menu-button">
             <FontAwesomeIcon className="menu-item" icon={faGlobe} />
-            <FontAwesomeIcon className="menu-item" icon={faUser} />
+            <FontAwesomeIcon className="menu-item" icon={faUser} onClick={goToLogin} />
             <FontAwesomeIcon className="menu-item" icon={faMagnifyingGlass} onClick={searchItem}/>
             <FontAwesomeIcon className="menu-item" icon={faCartShopping} />
         </div>
