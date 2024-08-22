@@ -26,13 +26,13 @@ const ProductDetail = () => {
       <Container>
         <Row className='detail-section'>
           <Col lg={7} md={6} className='detail-img'>
-              <img src={product?.i} alt="" />
+              <img src={product?.img} alt="" />
           </Col>
           <Col lg={4} md={6} className='detail-info'>
             <div>
-              <h1>{product?.t}</h1>
+              <h1>{product?.title}</h1>
                 <div className='p-info'>
-                  <h5>₩{product?.p}</h5>
+                  <h5>₩{product?.price}</h5>
                   <span className='shipping-style'>무료 배송</span>
                 </div>
                 <div className='detail-message'>
