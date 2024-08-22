@@ -176,56 +176,44 @@
         },
         {
             "id":29,
-            "i":"https://cdn-image02.casetify.com/usr/4787/34787/~v12/31818316_snappy-ring-holder_16005925__render40.png.560x560-w.m80.webp",
-            "t":"Snappy™ 링 홀더 Snappy™ 맥세이프 링 홀더",
-            "p":44500
-        },
-        {
-            "id":30,
-            "i":"https://cdn-image02.casetify.com/usr/4787/34787/~v117/31937344_snappy-cardholder-stand_16005956__render40.png.560x560-w.m80.webp",
-            "t":"Snappy™ 카드홀더 스탠드 Snappy™ 맥세이프 카드홀더 스탠드",
-            "p":50000
-        },
-        {
-            "id":31,
             "i":"https://cdn-image02.casetify.com/usr/4787/34787/~v117/31817811_snappy-cardholder-stand_16005956__render40.png.560x560-w.m80.webp",
             "t":"Snappy™ 카드홀더 스탠드 Snappy™ 맥세이프 카드홀더 스탠드",
             "p":50000
         },
         {
-            "id":32,
+            "id":30,
             "i":"https://cdn-image02.casetify.com/usr/4787/34787/~v148/32033245_powerthru-power-bank_16005924__render40.png.560x560-w.m80.webp",
             "t":"파워 뱅크 맥세이프 파워 뱅크",
             "p":88500
         },
         {
-            "id":33,
+            "id":31,
             "i":"https://cdn-image02.casetify.com/usr/4787/34787/~v148/31823510_powerthru-power-bank_16005924__render40.png.560x560-w.m80.webp",
             "t":"파워 뱅크 맥세이프 파워 뱅크",
             "p":88500
         },
         {
-            "id":34,
+            "id":32,
             "i":"https://cdn-image02.casetify.com/usr/4787/34787/~v148/31823518_powerthru-power-bank_16005924__render40.png.560x560-w.m80.webp",
             "t":"파워 뱅크 맥세이프 파워 뱅크",
             "p":88500
         },
         {
-            "id":35,
+            "id":33,
             "i":"https://cdn-stamplib.casetify.com/cms/image/4cb1230cb947cf4f1121e0d876b11b2d.png",
             "t":"아이폰 15 Pro Max 실리콘 케이스",
             "p":77500,
             "soldout":true
         },
         {
-            "id":36,
+            "id":34,
             "i":"https://cdn-stamplib.casetify.com/cms/image/3a81b998f7474996b0d082b6fa4ecdf8.png",
             "t":"비즈 스트랩",
             "p":77500,
             "soldout":true
         },
         {
-            "id":37,
+            "id":35,
             "i":"https://cdn-stamplib.casetify.com/cms/image/fdabff16ba543217b88a92d3f6d9fb30.png",
             "t":"AirPods Max 에어팟 맥스 케이스",
             "p":77500,
