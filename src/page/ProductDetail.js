@@ -6,12 +6,18 @@ const ProductDetail = () => {
   let{id} = useParams()
   const[product,setProduct] = useState(null)
   const getProductDetail = async() =>{
-    // let url = `http://localhost:5000/products/${id}`
-    let url = `https://my-json-server.typicode.com/hyun-june/react-study-shoppingmall/products/${id}`
-    let response = await fetch(url);
-    let data = await response.json();
-    console.log(data)
-    setProduct(data)
+
+    try {
+      // let url = `http://localhost:5000/products/${id}`
+      let url = `https://my-json-server.typicode.com/hyun-june/react-study-shoppingmall/products/${id}`
+      let response = await fetch(url);
+      let data = await response.json();
+      console.log(data)
+      setProduct(data)
+    } catch (error) {
+      console.log("Error:", error.message)
+    }
+
   }
   useEffect(()=>{
     getProductDetail();
@@ -24,9 +30,9 @@ const ProductDetail = () => {
           </Col>
           <Col lg={4} md={6} className='detail-info'>
             <div>
-              <h1>{product?.title}</h1>
-                <div className='price-info'>
-                  <h5>₩{product?.price}</h5>
+              <h1>{product?.t}</h1>
+                <div className='p-info'>
+                  <h5>₩{product?.p}</h5>
                   <span className='shipping-style'>무료 배송</span>
                 </div>
                 <div className='detail-message'>
