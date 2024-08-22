@@ -5,9 +5,43 @@ body{
 .header-section{
   background-color: #FB5B48;
   height: 4rem;
-  display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+
+@keyframes flowbanner {
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
+
+.banner-text{
+  white-space: nowrap;
+  overflow: hidden;
+  animation: flowbanner 20s linear infinite;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.banner-text p{
+  margin: 0px;
+  display: inline-block;
+}
+
+.banner-text a{
+  color: black;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-weight: 600;
+}
+
+.banner-text a:hover{
+  color: #666666;
 }
 
 .nav-section{
@@ -20,6 +54,7 @@ body{
 .logo-img{
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .menu-button{
@@ -35,12 +70,62 @@ body{
 
 .menu-list{
   display: flex;
-  list-style-type: none;
+  list-style: none;
   margin: 0;
+}
+
+li{
+  font-weight: bold;
+}
+
+li:hover{
+  color: #2c5dab;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .menu-list li{
   padding: 1rem;
+}
+
+.side-menubar{
+  display: none;
+}
+
+.side-menus{
+  list-style: none;
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  background-color: lightcoral;
+  color: white;
+  font-size: 20px;
+  z-index: 800;
+}
+
+.side-menu-list{
+  position: relative;
+  top: 40px;
+  margin: 10px 0px;
+}
+
+.iconX{
+  cursor: pointer;
+  position: absolute;
+  z-index: 1000;
+  top: -50px;
+  left: 210px;
+}
+
+.iconX:hover{
+  color: #666666;
+}
+
+.iconbar{
+  margin-left: 10px;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 .menu-item{
@@ -52,13 +137,34 @@ body{
   cursor: pointer;
 }
 
-.search-area{
+.search-section{
   display: flex;
   justify-content: center;
 }
 
+.search-area{
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+  position: relative;
+}
+
 #search-input{
   width: 50rem;
+  height: 40px;
+  background-color: #f7f7f7;
+  border: none;
+  border-radius: 28px;
+  padding: 3px 50px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.input-icon{
+  height: 20px;
+  left: 20px;
+  top: 10px;
+  position: absolute;
 }
 
 /* productCard */
@@ -93,6 +199,10 @@ body{
 /* Login */
 div a{
   text-decoration: none;
+}
+
+.logout{
+  color: #f05650;
 }
 
 .login-section{
@@ -130,7 +240,7 @@ div a{
   left: 15px;
   transition: .15s all;
   cursor: text;
-  z-index: 1000;
+  z-index: 200;
   background-color: white;
   padding: 0px 3px;
 }
@@ -226,13 +336,13 @@ div a{
   height: 800px;
   overflow: hidden; 
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .detail-img img{
-  width: 100%;
+  width: 400px;
   position: absolute;
-  top: -150px;
-  left: -30px;
 }
 
 .detail-info{
@@ -330,10 +440,14 @@ div a{
 }
 
 @media screen and (max-width:1280px) {
-  .detail-img img{
-    top: -100px;
-    text-align: center;
-  }
+  /* @keyframes flowbanner {
+    0%{
+      transform: translateX(50%);
+    }
+    100%{
+      transform: translateX(-50%);
+    }
+  } */
   .detail-img{
     height: 400px;
     margin-bottom: 3rem;
@@ -344,5 +458,30 @@ div a{
 
   .video-section video{
     width: 945px;
+  }
+}
+
+@media screen and (max-width:993px) {
+  .nav-section{
+    justify-content: space-between;
+  }
+
+  .side-menubar{
+    display: block;
+    position: relative;
+  }
+
+  .side-icon{
+    font-size: 30px;
+  }
+
+  .menu-list-section{
+    display: none;
+  }
+
+  .search-area{
+    left: 10rem;
+    max-width: 500px;
+    position: relative;
   }
 }

@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar sign={sign} setSign={setSign}/>
       <Routes>
         <Route path="/" element={<ProductAll />} />
         <Route path="/login" element={<Login setSign={setSign}/>} />

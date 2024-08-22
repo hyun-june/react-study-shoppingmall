@@ -1,18 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
+import { useParams } from 'react-router-dom'
 
 const ProductDetail = () => {
+  let{id} = useParams()
+  const[product,setProduct] = useState(null)
+  const getProductDetail = async() =>{
+    let url = `http://localhost:5000/products/${id}`
+    let response = await fetch(url);
+    let data = await response.json();
+    console.log(data)
+    setProduct(data)
+  }
+  useEffect(()=>{
+    getProductDetail();
+  },[])
   return (
       <Container>
         <Row className='detail-section'>
           <Col lg={7} md={6} className='detail-img'>
-              <img src="https://cdn-stamplib.casetify.com/cms/image/d90d155cf33883035d31f5c192856c32.jpg" alt="" />
+              <img src={product?.img} alt="" />
           </Col>
           <Col lg={4} md={6} className='detail-info'>
             <div>
-              <h1>Pass Loop Magnetic Wireless Charger</h1>
+              <h1>{product?.title}</h1>
                 <div className='price-info'>
-                  <h5>₩77500</h5>
+                  <h5>₩{product?.price}</h5>
                   <span className='shipping-style'>무료 배송</span>
                 </div>
                 <div className='detail-message'>
