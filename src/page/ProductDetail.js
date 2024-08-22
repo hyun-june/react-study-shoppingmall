@@ -26,7 +26,7 @@ const ProductDetail = () => {
       <Container>
         <Row className='detail-section'>
           <Col lg={7} md={6} className='detail-img'>
-              <img src={product?.img} alt="" />
+              <img src={product?.i} alt="" />
           </Col>
           <Col lg={4} md={6} className='detail-info'>
             <div>

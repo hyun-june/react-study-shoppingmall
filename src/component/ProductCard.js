@@ -10,7 +10,7 @@ const ProductCard = ({item}) => {
   }
   return (
     <div className='inner-card' onClick={showDetail}>
-        <img width={250} src={item?.img} alt="" />
+        <img width={250} src={item?.i} alt="" />
         <div className={`item-limitation ${soldoutColor}`}>{item?.soldout == true? "품절" : limitation == true? "한정" : ""}</div>
         <div>{item?.t}</div>
         <div>₩{item?.p}</div>
