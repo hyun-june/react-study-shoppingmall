@@ -33,6 +33,7 @@ body{
   height: auto;
   text-align: center;
   font-weight: 600;
+  overflow: hidden;
 }
 
 .banner-text a:hover{
@@ -517,4 +518,17 @@ div a{
     margin-top: 30px;
     max-width: 100%;
   }
+
+  @keyframes flowbanner {
+    0%{
+      transform: translateX(100%);
+    }
+    100%{
+      transform: translateX(-100%);
+    }
+}
+
+.banner-text{
+  animation: flowbanner 10s linear infinite;
+}
 }
