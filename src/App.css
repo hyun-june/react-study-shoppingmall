@@ -1,6 +1,10 @@
-body{
-  overflow-x:hidden;
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
+
 
 .header-section{
   background-color: #FB5B48;
@@ -8,6 +12,7 @@ body{
   justify-content: center;
   align-items: center;
   width: 100%;
+  overflow: hidden;
 }
 
 @keyframes flowbanner {
@@ -197,10 +202,6 @@ div a{
   text-decoration: none;
 }
 
-.banner-img{
-  width: 100%;
-}
-
 .logout{
   color: #f05650;
 }
@@ -208,7 +209,6 @@ div a{
 .login-section{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -336,7 +336,7 @@ div a{
 }
 
 .detail-img{
-  width: 100%;
+  width: 800px;
   height: 800px;
   padding: 10px;
   overflow: hidden; 
@@ -506,6 +506,24 @@ div a{
 }
 
 @media screen and (max-width:431px) {
+
+  .banner-text{
+    overflow: hidden;
+    animation: flowbanner 10s linear infinite;
+  }
+
+  @keyframes flowbanner {
+    0%{
+      transform: translateX(200%);
+    }
+    100%{
+      transform: translateX(-100%);
+    }
+  }
+
+  .banner-img{
+    width: 100%;
+  }
   .logo-img{
     display: none;
   }
@@ -518,17 +536,4 @@ div a{
     margin-top: 30px;
     max-width: 100%;
   }
-
-  @keyframes flowbanner {
-    0%{
-      transform: translateX(100%);
-    }
-    100%{
-      transform: translateX(-100%);
-    }
-}
-
-.banner-text{
-  animation: flowbanner 10s linear infinite;
-}
 }
