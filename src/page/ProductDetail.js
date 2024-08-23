@@ -30,7 +30,7 @@ const ProductDetail = () => {
           </Col>
           <Col lg={4} md={6} className='detail-info'>
             <div>
-              <h1>{product?.title}</h1>
+              <h1 className='detail-title'>{product?.title}</h1>
                 <div className='p-info'>
                   <h5>₩{product?.price}</h5>
                   <span className='shipping-style'>무료 배송</span>
