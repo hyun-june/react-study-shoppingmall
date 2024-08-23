@@ -14,14 +14,14 @@ const ProductAll = () => {
           let url = `https://my-json-server.typicode.com/hyun-june/react-study-shoppingmall/products?q=${searchQuery}`
           let response = await fetch(url);
           let data = await response.json();
-          const lowerFilter = searchQuery.toLowerCase();
-          const filterData = searchQuery? data.filter((item)=> item.t.toLowerCase().includes(lowerFilter)) : data;
-          console.log("filterData",filterData)
-          if(filterData.length === 0){
+          // const lowerFilter = searchQuery.toLowerCase();
+          // const filterData = searchQuery? data.filter((item)=> item.t.toLowerCase().includes(lowerFilter)) : data;
+          // console.log("filterData",filterData)
+          if(data.length === 0){
             alert("검색 결과가 없습니다.")
             return
           }
-        setProductList(filterData);
+        setProductList(data);
         console.log(data)
         } catch (error) {
           console.log("Error:",error.message)

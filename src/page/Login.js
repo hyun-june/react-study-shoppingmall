@@ -13,7 +13,7 @@ const Login = ({setSign}) => {
   }
   return (
     <Form onSubmit={(event)=>loginUser(event)} className='login-section'>
-        <img width={430} src="https://www.casetify.com/img/ui/login-banner.jpg" alt="" />
+        <img className='banner-img' src="https://www.casetify.com/img/ui/login-banner.jpg" alt="" />
         <div className='login-title'>케이스티파이 클럽 가입하기</div>
         <div className='id-section'>
           <input type="text" id='login-id' className='login-id'/>

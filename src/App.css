@@ -27,11 +27,6 @@ body{
   padding-top: 5px;
 }
 
-.banner-text p{
-  margin: 0px;
-  display: inline-block;
-}
-
 .banner-text a{
   color: black;
   width: 100%;
@@ -199,6 +194,10 @@ li:hover{
 /* Login */
 div a{
   text-decoration: none;
+}
+
+.banner-img{
+  width: 100%;
 }
 
 .logout{

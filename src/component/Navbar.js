@@ -52,11 +52,8 @@ const Navbar = ({sign, setSign}) => {
       <div className="header-section">
         <div className="banner-text">
             <a href="https://codingnoona.thinkific.com/pages/3c7ff4" target="blank">
-                <p>
                     같은 꿈을 꾸는 사람들을 모집합니다!🚀
                     <br />NodeJS 스터디 2기 2024.10.13 ~ 2024.11.24
-                </p>
-                
             </a>
         </div>
       </div>
