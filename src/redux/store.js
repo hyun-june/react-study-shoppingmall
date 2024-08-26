@@ -3,7 +3,7 @@ import { thunk } from "redux-thunk";
 import rootReducer from "./reducers/index"
 import { composeWithDevTools } from '@redux-devtools/extension';
 import { configureStore } from "@reduxjs/toolkit";
-import productReducer from "./reducers/productReducer";
+import productSlice from "./reducers/productSlice";
 import authenciateReducer from "./reducers/authenciateReducer"
 
 
@@ -12,7 +12,7 @@ import authenciateReducer from "./reducers/authenciateReducer"
 const store = configureStore({
     reducer:{
         auth : authenciateReducer,
-        product : productReducer
+        product : productSlice
     }
 })
 

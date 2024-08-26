@@ -3,13 +3,14 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { productAction } from '../redux/actions/productAction'
+import { fetchDetailProducts } from '../redux/reducers/productSlice'
 
 const ProductDetail = () => {
   let{id} = useParams()
   const product = useSelector((state)=>state.product.selectItem)
   const dispatch = useDispatch()
   const getProductDetail = () =>{
-    dispatch(productAction.getProductDetail(id))
+    dispatch(fetchDetailProducts(id))
     // try {
     //   // let url = `http://localhost:5000/products/${id}`
     //   let url = `https://my-json-server.typicode.com/hyun-june/react-study-shoppingmall/products/${id}`
