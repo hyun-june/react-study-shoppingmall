@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faUser, faX } from '@fortawesome/free-solid-svg-icons'
+import { faArrowTurnDown, faBars, faUser, faX } from '@fortawesome/free-solid-svg-icons'
 import { faGlobe, faMagnifyingGlass, faCartShopping} from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { authenciateAction } from "../redux/actions/authenciateAction";
 
-const Navbar = ({sign, setSign}) => {
+const Navbar = () => {
     const menuList = ['기종','시그니처 프린트','Co-Lab','커스텀','제품','최신 & 트렌딩']
-    
+    const authenciate = useSelector(state=>state.auth.authenciate) // true면 로그인 상태, false면 비로그인 상태
     const [toogleSearch,setToogleSearch] = useState(false);
     const [sideOpen, setSideOpen] = useState(false);
 
@@ -23,13 +25,14 @@ const Navbar = ({sign, setSign}) => {
     }
 
     const navigate = useNavigate()
+    const dispatch = useDispatch();
     const goToLogin = () =>{
-        if(sign){
-            setSign(false);
+        if(authenciate){
+            dispatch(authenciateAction.logout())
         } else{
             navigate("/login")
         }
-    }
+}
 
     const goToHome = () =>{
         navigate("/")
@@ -45,7 +48,7 @@ const Navbar = ({sign, setSign}) => {
         }
     }
 
-    const signInfo = sign === true? 'logout' : ""
+    const signInfo = authenciate? 'logout' : ""
     
   return (
     <div>

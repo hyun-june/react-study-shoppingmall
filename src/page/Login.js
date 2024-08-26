@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Form } from 'react-bootstrap'
 import SnsButton from '../component/SnsButton'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { authenciateAction } from '../redux/actions/authenciateAction'
 
 const Login = ({setSign}) => {
+  const [id,setId] = useState('');
   const navigate = useNavigate();
+  let dispatch = useDispatch();
+  
+  const getId = (event)=>{
+    setId(event.target.value)
+  }
+
   const loginUser = (event) =>{
     event.preventDefault();
     console.log("login user")
-    setSign(true)
+    dispatch(authenciateAction.login(id))
     navigate("/")
   }
   return (
@@ -16,7 +25,7 @@ const Login = ({setSign}) => {
         <img className='banner-img' src="https://www.casetify.com/img/ui/login-banner.jpg" alt="" />
         <div className='login-title'>케이스티파이 클럽 가입하기</div>
         <div className='id-section'>
-          <input type="text" id='login-id' className='login-id'/>
+          <input type="text" id='login-id' className='login-id'onChange={getId}/>
           <label for="login-id" className='login-placeholder'>Email</label>
         </div>
         <div>

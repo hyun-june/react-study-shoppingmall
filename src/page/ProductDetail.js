@@ -1,22 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import { productAction } from '../redux/actions/productAction'
 
 const ProductDetail = () => {
   let{id} = useParams()
-  const[product,setProduct] = useState(null)
-  const getProductDetail = async() =>{
-
-    try {
-      // let url = `http://localhost:5000/products/${id}`
-      let url = `https://my-json-server.typicode.com/hyun-june/react-study-shoppingmall/products/${id}`
-      let response = await fetch(url);
-      let data = await response.json();
-      console.log(data)
-      setProduct(data)
-    } catch (error) {
-      console.log("Error:", error.message)
-    }
+  const product = useSelector((state)=>state.product.selectItem)
+  const dispatch = useDispatch()
+  const getProductDetail = () =>{
+    dispatch(productAction.getProductDetail(id))
+    // try {
+    //   // let url = `http://localhost:5000/products/${id}`
+    //   let url = `https://my-json-server.typicode.com/hyun-june/react-study-shoppingmall/products/${id}`
+    //   let response = await fetch(url);
+    //   let data = await response.json();
+    //   console.log(data)
+    //   setProduct(data)
+    // } catch (error) {
+    //   console.log("Error:", error.message)
+    // }
 
   }
   useEffect(()=>{

@@ -1,12 +1,12 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useSearchParams } from 'react-router-dom';
 import './App.css';
 import ProductAll from './page/ProductAll';
 import Login from './page/Login';
 import ProductDetail from './page/ProductDetail';
 import Navbar from './component/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react';
 import PrivateRoute from './route/PrivateRoute';
+import { useSelector } from 'react-redux';
 
 // 1. 전체상품페이지, 로그인페이지, 상품상세페이지
 // 1-1. 네비게이션 바
@@ -20,15 +20,13 @@ import PrivateRoute from './route/PrivateRoute';
 // 9. 상품을 검색할 수 있다.
 
 function App() {
-  const[sign,setSign] = useState(false) // true면 로그인 상태, false면 비로그인 상태
-
   return (
     <div>
-      <Navbar sign={sign} setSign={setSign}/>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<ProductAll />} />
-        <Route path="/login" element={<Login setSign={setSign}/>} />
-        <Route path="/products/:id" element={<PrivateRoute sign={sign}/>} />
+        <Route path="/login" element={<Login  />} />
+        <Route path="/products/:id" element={<PrivateRoute />} />
       </Routes>
     </div>
   );
